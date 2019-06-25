@@ -1866,6 +1866,7 @@ exports[`CalendarPicker It handle selectedStartDate and selectedEndDate props 1`
             style={
               Object {
                 "alignSelf": "center",
+                "backgroundColor": "#CCCCCC",
                 "borderRadius": 60,
                 "height": 60,
                 "justifyContent": "center",
@@ -1889,7 +1890,9 @@ exports[`CalendarPicker It handle selectedStartDate and selectedEndDate props 1`
                   },
                   undefined,
                   undefined,
-                  Object {},
+                  Object {
+                    "color": "#000000",
+                  },
                 ]
               }
             >
@@ -2402,6 +2405,13 @@ exports[`CalendarPicker It handle selectedStartDate and selectedEndDate props 1`
           </View>
         </View>
       </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      />
       <View
         style={
           Object {
@@ -5010,6 +5020,13 @@ exports[`CalendarPicker It renders calendar picker 1`] = `
           </View>
         </View>
       </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      />
     </View>
   </View>
 </View>
@@ -6547,6 +6564,13 @@ exports[`CalendarPicker It renders calendar picker with props 1`] = `
           </Text>
         </View>
       </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      />
       <View
         style={
           Object {

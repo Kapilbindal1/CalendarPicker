@@ -39,7 +39,6 @@ describe('CalendarPicker', function() {
 		const CalendarPicker = renderer.create(
 			<CalenderPicker
 				allowRangeSelection={true}
-				initialDate={new Date(2019, 1, 20)}
 				selectedStartDate={selectedStartDate}
 				selectedEndDate={selectedEndDate}
 				onDateChange={() => {}}

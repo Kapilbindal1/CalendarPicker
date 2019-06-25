@@ -1,21 +1,14 @@
-import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity
-} from 'react-native';
-import PropTypes from 'prop-types';
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import PropTypes from "prop-types";
 
 export default function Day(props) {
   const { styles } = props;
-  return(
+  return (
     <View style={styles.dayWrapper}>
       <View style={styles.dayButton}>
-        <TouchableOpacity
-          style={styles.dayButton}
-        >
-          <Text style={styles.dayLabel}>
-          </Text>
+        <TouchableOpacity style={styles.dayButton}>
+          <Text style={styles.dayLabel} />
         </TouchableOpacity>
       </View>
     </View>
@@ -25,5 +18,5 @@ export default function Day(props) {
 Day.propTypes = {
   styles: PropTypes.shape({}),
   day: PropTypes.number,
-  onPressDay: PropTypes.func,
-}
+  onPressDay: PropTypes.func
+};

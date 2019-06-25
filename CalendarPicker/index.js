@@ -34,7 +34,6 @@ export default class CalendarPicker extends Component {
     this.handleOnPressNext = this.handleOnPressNext.bind(this);
     this.handleOnPressDay = this.handleOnPressDay.bind(this);
     this.onSwipe = this.onSwipe.bind(this);
-    this.resetSelections = this.resetSelections.bind(this);
   }
 
   static defaultProps = {
@@ -98,8 +97,7 @@ export default class CalendarPicker extends Component {
       selectedDayTextColor,
       todayBackgroundColor,
       width,
-      height,
-      dayShape
+      height
     } = props;
 
     // The styles in makeStyles are intially scaled to this width
@@ -112,8 +110,7 @@ export default class CalendarPicker extends Component {
         initialScale,
         selectedDayColor,
         selectedDayTextColor,
-        todayBackgroundColor,
-        dayShape
+        todayBackgroundColor
       )
     };
   }
@@ -260,7 +257,16 @@ export default class CalendarPicker extends Component {
       maxRangeDuration,
       swipeConfig,
       customDatesStyles,
-      enableDateChange
+      enableDateChange,
+      weekDaysTextStyle,
+      headerIconSize,
+      showHeaderIcon,
+      headerTextStyle,
+      displayDot,
+      dotStyle,
+      mainStyle,
+      headerIconStyle,
+      markDates
     } = this.props;
 
     let disabledDatesTime = [];
@@ -307,13 +313,12 @@ export default class CalendarPicker extends Component {
         maxRangeDurationTime = maxRangeDuration;
       }
     }
-
     return (
       <Swiper
         onSwipe={direction => this.props.enableSwipe && this.onSwipe(direction)}
         config={{ ..._swipeConfig, ...swipeConfig }}
       >
-        <View style={styles.calendar}>
+        <View style={[styles.calendar, mainStyle]}>
           <HeaderControls
             styles={styles}
             currentMonth={currentMonth}
@@ -325,12 +330,17 @@ export default class CalendarPicker extends Component {
             previousTitle={previousTitle}
             nextTitle={nextTitle}
             textStyle={textStyle}
+            headerIconSize={headerIconSize}
+            showHeaderIcon={showHeaderIcon}
+            headerTextStyle={headerTextStyle}
+            headerIconStyle={headerIconStyle}
           />
           <Weekdays
             styles={styles}
             startFromMonday={startFromMonday}
             weekdays={weekdays}
-            textStyle={textStyle}
+            // textStyle={textStyle}
+            weekDaysTextStyle={weekDaysTextStyle}
           />
           <DaysGridView
             enableDateChange={enableDateChange}
@@ -354,6 +364,9 @@ export default class CalendarPicker extends Component {
             selectedRangeStyle={selectedRangeStyle}
             selectedRangeEndStyle={selectedRangeEndStyle}
             customDatesStyles={customDatesStyles}
+            displayDot={displayDot}
+            dotStyle={dotStyle}
+            markDates={markDates}
           />
         </View>
       </Swiper>
